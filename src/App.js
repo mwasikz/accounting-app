@@ -3,9 +3,11 @@ import './App.css';
 function App() {
   return (
 
-    <div className="App text-3xl font-bold">
+
+    <div className="App text-3xl font-light shadow-lg pb-3 bg-slate-200">
       Accounting App
     </div>
+
   );
 }
 
