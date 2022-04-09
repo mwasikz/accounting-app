@@ -45,7 +45,7 @@ const Sidebar = ({ closeToggle }) => {
                     </NavLink>
 
                      <NavLink
-                        to='/purchase'
+                        to='/purchases'
                         className={({isActive}) => isActive ? isActiveStyle : isNotActiveStyle }
                         onClick={handleCloseSidebar}
                     >
