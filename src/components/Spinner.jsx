@@ -6,7 +6,7 @@ const Spinner = ({ message }) => {
     <div className='flex flex-col justify-center items-center w-full h-full'>
     <Triangle  
         type='Rings'
-        color='#eb2f06'
+        color='#fd6500'
         className='m-5'
     />
     <p className='text-lg text-center px-2'>{message}</p>

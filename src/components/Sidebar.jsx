@@ -6,8 +6,8 @@ import { BsCreditCard2BackFill, BsFillCartFill, BsBank2, BsFileBarGraphFill } fr
 
 import logo from '../assets/logo.png';
 
-const isNotActiveStyle = 'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize';
-const isActiveStyle = 'flex items-center px-5 gap-3 font-bold border-r-2 border-red-800 transition-all duration-200 ease-in-out capitalize text-red-800';
+const isNotActiveStyle = 'flex items-center px-5 gap-3 text-neutral-900 hover:text-black transition-all duration-200 ease-in-out capitalize';
+const isActiveStyle = 'flex items-center px-5 gap-3 font-bold border-r-2 border-red-800 transition-all duration-200 ease-in-out capitalize text-orange-600';
 
 
 const Sidebar = ({ closeToggle }) => {
@@ -16,7 +16,7 @@ const Sidebar = ({ closeToggle }) => {
     }
 
     return (
-        <div className="flex flex-col justify-between bg-white h-full overflow-y-scroll min-w-210 hide-scrollbar pr-10 shadow-lg">
+        <div className="flex flex-col justify-between bg-gray-300 h-full overflow-y-scroll min-w-210 hide-scrollbar pr-20 shadow-lg">
             <div className="flex flex-col">
                 <Link 
                     to='/'
