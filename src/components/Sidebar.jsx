@@ -7,7 +7,7 @@ import { BsCreditCard2BackFill, BsFillCartFill, BsBank2, BsFileBarGraphFill } fr
 import logo from '../assets/logo.png';
 
 const isNotActiveStyle = 'flex items-center px-5 gap-3 text-neutral-900 hover:text-black transition-all duration-200 ease-in-out capitalize';
-const isActiveStyle = 'flex items-center px-5 gap-3 font-bold border-r-2 border-red-800 transition-all duration-200 ease-in-out capitalize text-orange-600';
+const isActiveStyle = 'flex items-center px-5 gap-3 font-bold border-r-2 border-orange-600 transition-all duration-200 ease-in-out capitalize text-orange-600';
 
 
 const Sidebar = ({ closeToggle }) => {

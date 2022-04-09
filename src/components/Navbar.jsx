@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { IoMdSearch, IoIosNotifications } from 'react-icons/io';
+import { IoIosSettings } from 'react-icons/io';
 
 const Navbar = ({ searchTerm, setSearchTerm }) => {
     const navigate = useNavigate();
@@ -19,6 +20,7 @@ const Navbar = ({ searchTerm, setSearchTerm }) => {
                 />
                 
             </div>
+            <IoIosSettings fontSize={30} className='mt-2 cursor-pointer'  />
             <IoIosNotifications fontSize={30} className='mt-2 cursor-pointer' />
         </div>
     )
