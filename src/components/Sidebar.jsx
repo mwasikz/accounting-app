@@ -16,11 +16,11 @@ const Sidebar = ({ closeToggle }) => {
     }
 
     return (
-        <div className="flex flex-col justify-between bg-gray-300 h-full overflow-y-scroll min-w-210 hide-scrollbar pr-20 shadow-lg">
+        <div className="flex flex-col justify-between bg-gray-300 h-full overflow-y-scroll min-w-210 hide-scrollbar mr-3">
             <div className="flex flex-col">
                 <Link 
                     to='/'
-                    className="flex px-5 gap-2 my-6 pt-1 w-190 items-center"
+                    className="flex px-5 gap-2 my-6 pt-1 w-190 items-center mr-20"
                     onClick={handleCloseSidebar}
                 >
                 <img src={logo} alt={logo} className="w-28" />
