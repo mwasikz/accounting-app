@@ -19,7 +19,7 @@ const Navbar = ({ searchTerm, setSearchTerm }) => {
                 />
                 
             </div>
-            <IoIosNotifications fontSize={30} className='mt-2' />
+            <IoIosNotifications fontSize={30} className='mt-2 cursor-pointer' />
         </div>
     )
 }
