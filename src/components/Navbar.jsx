@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import { IoMdSearch } from 'react-icons/io';
+import { IoMdSearch, IoIosNotifications } from 'react-icons/io';
 
 const Navbar = ({ searchTerm, setSearchTerm }) => {
     const navigate = useNavigate();
@@ -17,7 +17,9 @@ const Navbar = ({ searchTerm, setSearchTerm }) => {
                     onFocus={() => Navigate('/search')}
                     className="p-2 w-full bg-white outline-none"
                 />
+                
             </div>
+            <IoIosNotifications fontSize={30} className='mt-2' />
         </div>
     )
 }
