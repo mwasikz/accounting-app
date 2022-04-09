@@ -9,7 +9,6 @@ const Purchases = () => {
 
     return (
         <div>
-            <Dashboard />
             Purchases
         </div>
     )

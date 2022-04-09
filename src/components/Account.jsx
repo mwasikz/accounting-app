@@ -9,7 +9,6 @@ const Account = () => {
 
     return (
         <div>
-            <Dashboard />
             Account
         </div>
     )

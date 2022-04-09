@@ -9,7 +9,6 @@ const Payroll = () => {
 
     return (
         <div>
-            <Dashboard />
             Payroll
         </div>
     )

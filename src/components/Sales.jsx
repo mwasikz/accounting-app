@@ -9,7 +9,6 @@ const Sales = () => {
 
     return (
         <div>
-            <Dashboard />
             Sales
         </div>
     )

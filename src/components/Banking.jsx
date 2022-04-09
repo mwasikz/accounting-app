@@ -9,7 +9,6 @@ const Banking = () => {
 
     return (
         <div>
-            <Dashboard />
             Banking
         </div>
     )
