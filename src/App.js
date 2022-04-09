@@ -1,12 +1,14 @@
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
+import Home from './container/Home';
 
 function App() {
   return (
-
-
-    <div className="App text-3xl font-light shadow-lg pb-3 bg-slate-200">
-      Accounting App
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+    </BrowserRouter>
 
   );
 }
