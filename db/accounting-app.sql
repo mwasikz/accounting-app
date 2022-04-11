@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2022 at 07:24 PM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Generation Time: Apr 11, 2022 at 07:55 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `accounting_app`
+-- Database: `accounting-app`
 --
 
 -- --------------------------------------------------------
@@ -33,7 +32,7 @@ CREATE TABLE `account` (
   `name` varchar(50) DEFAULT NULL,
   `account_type_id` int(11) DEFAULT NULL,
   `opening_balance` float DEFAULT NULL,
-  `date_created` text
+  `date_created` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -58,13 +57,14 @@ CREATE TABLE `customer` (
   `account_id` int(11) DEFAULT NULL,
   `name` varchar(50) DEFAULT NULL,
   `phone` varchar(15) DEFAULT NULL,
-  `email` text,
-  `address` text,
-  `city` text,
-  `country` text,
+  `email` text DEFAULT NULL,
+  `address` text DEFAULT NULL,
+  `city` text DEFAULT NULL,
+  `country` text DEFAULT NULL,
   `cr_limit_amount` int(11) DEFAULT NULL,
   `cr_limit_days` int(11) DEFAULT NULL,
-  `remarks` text
+  `remarks` text DEFAULT NULL,
+  `test` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -76,7 +76,7 @@ CREATE TABLE `customer` (
 CREATE TABLE `estimate` (
   `id` int(11) NOT NULL,
   `voucher_no` varchar(20) DEFAULT NULL,
-  `date` text,
+  `date` text DEFAULT NULL,
   `customer_id` int(11) DEFAULT NULL,
   `total_amount` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -105,11 +105,11 @@ CREATE TABLE `est_line` (
 CREATE TABLE `expense` (
   `id` int(11) NOT NULL,
   `voucher_no` varchar(20) DEFAULT NULL,
-  `date` text,
+  `date` text DEFAULT NULL,
   `account_id` int(11) DEFAULT NULL,
   `total_amount` float DEFAULT NULL,
-  `remarks` text,
-  `ref_doc_name` text
+  `remarks` text DEFAULT NULL,
+  `ref_doc_name` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -135,11 +135,11 @@ CREATE TABLE `exp_line` (
 CREATE TABLE `income` (
   `id` int(11) NOT NULL,
   `voucher_no` varchar(20) DEFAULT NULL,
-  `date` text,
+  `date` text DEFAULT NULL,
   `account_id` int(11) DEFAULT NULL,
   `total_amount` float DEFAULT NULL,
-  `remarks` text,
-  `ref_doc_name` text
+  `remarks` text DEFAULT NULL,
+  `ref_doc_name` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -192,18 +192,18 @@ CREATE TABLE `po_line` (
 
 CREATE TABLE `product` (
   `id` int(11) NOT NULL,
-  `code` text,
+  `code` text DEFAULT NULL,
   `name` varchar(50) DEFAULT NULL,
-  `desc` text,
+  `desc` text DEFAULT NULL,
   `unit_id` int(11) DEFAULT NULL,
   `default_pur_price` float DEFAULT NULL,
   `default_sale_price` float DEFAULT NULL,
   `stock_open_qty` int(11) DEFAULT NULL,
   `stock_open_val` float DEFAULT NULL,
-  `stock_open_date` text,
+  `stock_open_date` text DEFAULT NULL,
   `serial_track` tinyint(1) DEFAULT NULL,
   `reorder_qty` int(11) DEFAULT NULL,
-  `remarks` text
+  `remarks` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -215,15 +215,15 @@ CREATE TABLE `product` (
 CREATE TABLE `purchase` (
   `id` int(11) NOT NULL,
   `voucher_no` varchar(20) DEFAULT NULL,
-  `date` text,
+  `date` text DEFAULT NULL,
   `supplier_id` int(11) DEFAULT NULL,
   `account_id` int(11) DEFAULT NULL,
   `total_amount` float DEFAULT NULL,
   `total_discount` float DEFAULT NULL,
   `round_off` float DEFAULT NULL,
-  `remarks` text,
-  `ref_doc_name` text,
-  `terms_conditions` text
+  `remarks` text DEFAULT NULL,
+  `ref_doc_name` text DEFAULT NULL,
+  `terms_conditions` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -250,7 +250,7 @@ CREATE TABLE `pur_line` (
 CREATE TABLE `pur_order` (
   `id` int(11) NOT NULL,
   `voucher_no` varchar(20) DEFAULT NULL,
-  `date` text,
+  `date` text DEFAULT NULL,
   `supplier_id` int(11) DEFAULT NULL,
   `total_amount` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -264,15 +264,15 @@ CREATE TABLE `pur_order` (
 CREATE TABLE `sale` (
   `id` int(11) NOT NULL,
   `voucher_no` varchar(20) DEFAULT NULL,
-  `date` text,
+  `date` text DEFAULT NULL,
   `customer_id` int(11) DEFAULT NULL,
   `account_id` int(11) DEFAULT NULL,
   `total_amount` float DEFAULT NULL,
   `total_discount` float DEFAULT NULL,
   `round_off` float DEFAULT NULL,
-  `remarks` text,
-  `ref_doc_name` text,
-  `terms_conditions` text
+  `remarks` text DEFAULT NULL,
+  `ref_doc_name` text DEFAULT NULL,
+  `terms_conditions` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -315,13 +315,13 @@ CREATE TABLE `supplier` (
   `account_id` int(11) DEFAULT NULL,
   `name` varchar(50) DEFAULT NULL,
   `phone` varchar(15) DEFAULT NULL,
-  `email` text,
-  `address` text,
-  `city` text,
-  `country` text,
+  `email` text DEFAULT NULL,
+  `address` text DEFAULT NULL,
+  `city` text DEFAULT NULL,
+  `country` text DEFAULT NULL,
   `cr_limit_amount` int(11) DEFAULT NULL,
   `cr_limit_days` int(11) DEFAULT NULL,
-  `remarks` text
+  `remarks` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
