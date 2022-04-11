@@ -7,6 +7,7 @@ const Spinner = ({ message }) => {
     <Triangle  
         type='Rings'
         color='#fd6500'
+        height={60} width={60}
         className='m-5'
     />
     <p className='text-lg text-center px-2'>{message}</p>
