@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2022 at 07:55 PM
+-- Generation Time: Apr 11, 2022 at 08:19 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -63,8 +63,7 @@ CREATE TABLE `customer` (
   `country` text DEFAULT NULL,
   `cr_limit_amount` int(11) DEFAULT NULL,
   `cr_limit_days` int(11) DEFAULT NULL,
-  `remarks` text DEFAULT NULL,
-  `test` int(11) NOT NULL
+  `remarks` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
